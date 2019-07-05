@@ -7,7 +7,7 @@
   "scripts": {
     "start": "concurrently 'node index.js' 'http-server client/build -p $PORT'",
     "dev": "nodemon index.js",
-    "build": "npm install && (cd client && npm install) && (cd client && npm run build) && apidoc -i ./routes/ -o ./client/public/docs"
+    "build": "npm install && (cd client && npm install) && (cd client && npm run build) && apidoc -i ./routes/ -o ./client/public/docs && echo 'DATABASE_URL=' > .env && echo $DATABASE_URL >> .env"
   },
   "keywords": [],
   "author": "",
